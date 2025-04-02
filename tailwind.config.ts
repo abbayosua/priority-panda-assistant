@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,8 +26,17 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#9b87f5',
+					light: '#b8a8f8',
+					dark: '#7e69ab',
+					foreground: '#ffffff'
+				},
+				priority: {
+					1: '#F97316', // Orange - Highest
+					2: '#FB923C', // Light Orange - High
+					3: '#FBBF24', // Yellow - Medium
+					4: '#34D399', // Green - Low
+					5: '#9CA3AF', // Gray - Lowest
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -84,11 +94,16 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 			}
 		}
 	},
